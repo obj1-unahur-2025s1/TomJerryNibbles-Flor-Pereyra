@@ -1,13 +1,55 @@
 object tom {
+    var distanciaRecorrida = 0
+    var ultimoRatonComido = jerry
+    var energia = 50
+    method comer(unRaton) {
+        energia = energia + 12 + unRaton.peso()
+        ultimoRatonComido = unRaton
+    }
+
+    method correr(metros) {
+        energia - metros * 0.5
+        distanciaRecorrida = distanciaRecorrida + metros
+    }
+
+    method velocidadMaxima() {
+        return 5 + energia / 10
+    }
 
 }
 
 object jerry {
+    var edad = 2
+
+    method cumplirAnios() {
+        edad += 1
+    }
+
+    method peso() {
+        return edad *20
+    }
   
 }
 
 object nibbles {
+    //const peso = 35??
+
+    method peso() {
+        return 35
+    }
   
 }
 
-// Inventar otro ratón
+object jorgito {
+    //puede cambiar su peso a voluntad
+    var peso = 30
+
+    method peso() {
+        return peso
+    }
+
+    method peso(nuevoPeso) {
+        peso = nuevoPeso
+    }
+  
+}
